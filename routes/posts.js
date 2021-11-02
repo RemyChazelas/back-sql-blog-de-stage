@@ -31,7 +31,6 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const sql = `INSERT INTO posts (title, content, author, likes) VALUES (?, ?, ?, ?)`
-    console.log(req.body)
     const values = [req.body.title, req.body.content, req.body.author, req.body.likes]
     mysql.query(sql, values, (err, result) => {
         if (err) {
@@ -46,7 +45,6 @@ router.post("/", (req, res) => {
 router.put("/:id", (req, res) => {
     const { id } = req.params
     const sql = `UPDATE posts SET ? WHERE id = ?`
-    console.log(req.body)
     const values = [req.body, id]
     mysql.query(sql, values, (err, result) => {
         if (err) {
