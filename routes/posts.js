@@ -30,8 +30,8 @@ router.get("/:id", (req, res) => {
 })
 
 router.post("/", (req, res) => {
-    const sql = `INSERT INTO posts (title, content, author, likes) VALUES (?, ?, ?, ?)`
-    const values = [req.body.title, req.body.content, req.body.author, req.body.likes]
+    const sql = `INSERT INTO posts (title, content) VALUES (?, ?)`
+    const values = [req.body.title, req.body.content]
     mysql.query(sql, values, (err, result) => {
         if (err) {
             res.status(500).send("Error retrieving create data from database", err)
