@@ -10,7 +10,7 @@ connection.connect((err) => {
     if (err) {
         console.error("error connecting: " + err.stack)
     } else {
-        console.log("database connected")
+        console.log("database connected !")
     }
 })
 
